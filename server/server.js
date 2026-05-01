@@ -42,13 +42,13 @@ app.post("/api/display", upload.single("image"), async (req, res) => {
             contents,
             ar_marker_id = "N/A",
             pos_x = 0,
-            pos_y = 0,
+            pos_z = 0,
             floor_info = "Museum 1F",
         } = req.body;
 
         const imagePath = req.file ? `/uploads/${req.file.filename}` : null;
 
-        const sql = `INSERT INTO display (title, feature, contents, ar_marker_id, pos_x, pos_y, floor_info, image_path) VALUES (?, ?, ?, ?, ?, ?, ?, ?)`;
+        const sql = `INSERT INTO display (title, feature, contents, ar_marker_id, pos_x, pos_z, floor_info, image_path) VALUES (?, ?, ?, ?, ?, ?, ?, ?)`;
 
         const [result] = await db.query(sql, [
             title,
@@ -56,7 +56,7 @@ app.post("/api/display", upload.single("image"), async (req, res) => {
             contents,
             ar_marker_id,
             pos_x,
-            pos_y,
+            pos_z,
             floor_info,
             imagePath,
         ]);

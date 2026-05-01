@@ -68,91 +68,6 @@ function Space() {
 
                 {/* Editor Layout */}
                 <div className="flex-1 flex overflow-hidden">
-                    <div className="w-72 bg-[#151a25] border-r border-slate-800 flex flex-col z-10">
-                        {/* Floor Selector */}
-                        <div className="p-4 border-b border-slate-800">
-                            <label className="block text-xs font-semibold text-slate-400 mb-2 uppercase tracking-wide">
-                                Floor Plan
-                            </label>
-                            <div className="relative">
-                                {/* Select 배경 수정: bg-[#111318] */}
-                                <select className="w-full pl-10 pr-4 py-2 bg-[#111318] border border-slate-700 rounded-lg text-sm font-medium text-white focus:ring-2 focus:ring-primary/50 cursor-pointer appearance-none outline-none">
-                                    <option>Museum 1F</option>
-                                    <option>Museum 2F</option>
-                                    <option>Museum 3F</option>
-                                    <option>Museum B1</option>
-                                </select>
-                                <span className="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-lg pointer-events-none">
-                                    layers
-                                </span>
-                                <span className="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 text-lg pointer-events-none">
-                                    expand_more
-                                </span>
-                            </div>
-                        </div>
-
-                        {/* Layers */}
-                        <div className="flex-1 overflow-y-auto p-4">
-                            <div className="flex justify-between items-center mb-3">
-                                <label className="block text-xs font-semibold text-slate-400 uppercase tracking-wide">
-                                    Visibility Layers
-                                </label>
-                            </div>
-                            <div className="space-y-3">
-                                <div className="flex items-center justify-between p-2 rounded-lg hover:bg-white/5 group cursor-pointer border border-transparent hover:border-slate-700">
-                                    <div className="flex items-center gap-3">
-                                        <span className="material-symbols-outlined text-slate-500 group-hover:text-primary transition-colors">
-                                            map
-                                        </span>
-                                        <span className="text-sm text-slate-300">도면 (Map)</span>
-                                    </div>
-                                    <input
-                                        defaultChecked
-                                        className="rounded border-slate-600 bg-[#111318] text-primary focus:ring-primary/20 focus:ring-offset-0"
-                                        type="checkbox"
-                                    />
-                                </div>
-                                <div className="flex items-center justify-between p-2 rounded-lg bg-primary/10 border border-primary/20 group cursor-pointer">
-                                    <div className="flex items-center gap-3">
-                                        <span className="material-symbols-outlined text-primary">hub</span>
-                                        <span className="text-sm font-medium text-white">AR 노드 (Nodes)</span>
-                                    </div>
-                                    <input
-                                        defaultChecked
-                                        className="rounded border-slate-600 bg-[#111318] text-primary focus:ring-primary/20 focus:ring-offset-0"
-                                        type="checkbox"
-                                    />
-                                </div>
-                                <div className="flex items-center justify-between p-2 rounded-lg hover:bg-white/5 group cursor-pointer border border-transparent hover:border-slate-700">
-                                    <div className="flex items-center gap-3">
-                                        <span className="material-symbols-outlined text-slate-500 group-hover:text-primary transition-colors">
-                                            route
-                                        </span>
-                                        <span className="text-sm text-slate-300">이동 경로 (Edges)</span>
-                                    </div>
-                                    <input
-                                        defaultChecked
-                                        className="rounded border-slate-600 bg-[#111318] text-primary focus:ring-primary/20 focus:ring-offset-0"
-                                        type="checkbox"
-                                    />
-                                </div>
-                                <div className="flex items-center justify-between p-2 rounded-lg hover:bg-white/5 group cursor-pointer border border-transparent hover:border-slate-700">
-                                    <div className="flex items-center gap-3">
-                                        <span className="material-symbols-outlined text-slate-500 group-hover:text-primary transition-colors">
-                                            stars
-                                        </span>
-                                        <span className="text-sm text-slate-300">전시물 (POIs)</span>
-                                    </div>
-                                    <input
-                                        defaultChecked
-                                        className="rounded border-slate-600 bg-[#111318] text-primary focus:ring-primary/20 focus:ring-offset-0"
-                                        type="checkbox"
-                                    />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
                     {/* Center Panel: Map Canvas */}
                     <div className="flex-1 bg-[#0f1218] relative overflow-hidden flex items-center justify-center">
                         {/* Grid Pattern */}
@@ -251,23 +166,20 @@ function Space() {
                                         </label>
                                         <input
                                             className="w-full text-sm border-slate-700 rounded-lg bg-[#111318] text-slate-300 focus:ring-primary focus:border-primary placeholder-gray-500"
-                                            readOnly
                                             type="text"
-                                            defaultValue="node_main_hall_04"
+                                            placeholder="AR Marker ID"
                                         />
                                     </div>
                                     <div>
-                                        <label className="block text-xs font-medium text-slate-400 mb-1">
-                                            타입 (Type)
-                                        </label>
+                                        <label className="block text-xs font-medium text-slate-400 mb-1">Floor</label>
                                         <select
                                             className="w-full text-sm border-slate-700 bg-[#111318] text-white rounded-lg focus:ring-primary focus:border-primary outline-none"
                                             defaultValue="교차로 (Junction)"
                                         >
-                                            <option>일반 노드 (Normal)</option>
-                                            <option>교차로 (Junction)</option>
-                                            <option>목적지 (Destination)</option>
-                                            <option>계단/엘리베이터 (Vertical)</option>
+                                            <option>MUSEUM B1</option>
+                                            <option>MUSEUM F1</option>
+                                            <option>MUSEUM F2</option>
+                                            <option>MUSEUM F3</option>
                                         </select>
                                     </div>
                                 </div>
@@ -290,7 +202,7 @@ function Space() {
                                         />
                                     </div>
                                     <div>
-                                        <label className="block text-xs font-medium text-slate-400 mb-1">Y Pos</label>
+                                        <label className="block text-xs font-medium text-slate-400 mb-1">Z Pos</label>
                                         <input
                                             className="w-full text-sm border-slate-700 bg-[#111318] text-white rounded-lg focus:ring-primary focus:border-primary outline-none"
                                             type="number"
@@ -301,56 +213,11 @@ function Space() {
                             </div>
                             <div className="h-px bg-slate-700"></div>
 
-                            {/* Accessibility */}
-                            <div>
-                                <h4 className="text-xs font-bold text-slate-400 mb-3 uppercase flex items-center gap-2">
-                                    <span className="material-symbols-outlined text-sm">accessible_forward</span> 접근성
-                                    설정
-                                </h4>
-                                <div className="space-y-2">
-                                    <label className="flex items-center gap-3 p-2 border border-slate-700 rounded-lg cursor-pointer hover:bg-white/5 transition-colors">
-                                        <input
-                                            defaultChecked
-                                            className="rounded border-slate-600 bg-[#111318] text-primary focus:ring-primary focus:ring-offset-0"
-                                            type="checkbox"
-                                        />
-                                        <span className="text-sm text-white">휠체어 접근 가능</span>
-                                    </label>
-                                    <label className="flex items-center gap-3 p-2 border border-slate-700 rounded-lg cursor-pointer hover:bg-white/5 transition-colors">
-                                        <input
-                                            className="rounded border-slate-600 bg-[#111318] text-primary focus:ring-primary focus:ring-offset-0"
-                                            type="checkbox"
-                                        />
-                                        <span className="text-sm text-white">경사로 있음 (Ramp)</span>
-                                    </label>
-                                </div>
-                            </div>
-                            <div className="h-px bg-slate-700"></div>
-
                             {/* Connected Nodes */}
                             <div>
                                 <h4 className="text-xs font-bold text-slate-400 mb-3 uppercase flex items-center gap-2">
-                                    <span className="material-symbols-outlined text-sm">hub</span> 연결된 노드 (Edges)
+                                    <span className="material-symbols-outlined text-sm">hub</span> 적용된 전시품 위치
                                 </h4>
-                                <div className="flex flex-col gap-2">
-                                    <div className="flex items-center justify-between p-2 bg-[#101622] rounded border border-slate-700 text-xs hover:border-slate-500 transition-colors">
-                                        <span className="font-medium text-white">To: node_main_hall_03</span>
-                                        <span className="text-slate-500">12m</span>
-                                        <button className="text-rose-400 hover:bg-rose-500/10 p-1 rounded transition-colors">
-                                            <span className="material-symbols-outlined text-sm">close</span>
-                                        </button>
-                                    </div>
-                                    <div className="flex items-center justify-between p-2 bg-[#101622] rounded border border-slate-700 text-xs hover:border-slate-500 transition-colors">
-                                        <span className="font-medium text-white">To: node_corridor_01</span>
-                                        <span className="text-slate-500">8m</span>
-                                        <button className="text-rose-400 hover:bg-rose-500/10 p-1 rounded transition-colors">
-                                            <span className="material-symbols-outlined text-sm">close</span>
-                                        </button>
-                                    </div>
-                                    <button className="w-full py-2 border border-dashed border-slate-600 text-slate-400 text-xs rounded hover:bg-white/5 hover:text-primary hover:border-primary transition-colors">
-                                        + 연결 추가하기
-                                    </button>
-                                </div>
                             </div>
                         </div>
 

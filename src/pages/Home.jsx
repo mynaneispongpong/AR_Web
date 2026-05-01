@@ -190,20 +190,30 @@ function Index() {
                                     층별 세부사항
                                 </h3>
                                 <div className="flex flex-col gap-3 relative">
+                                    {/* \n을 사용하여 줄바꿈 데이터 전달 */}
                                     <SequenceStep
-                                        title="1층 - 학교사 전시실"
-                                        value="효성여자대학교와 대구가톨릭대학교의 통합 이전 대학의 역사"
+                                        title="Floor B1"
+                                        value={"A : 4수장고\nB : 5수장고(보이는 수장고)"}
                                         color="border-l-blue-500 text-blue-400"
                                     />
                                     <SequenceStep
-                                        title="1층 - 기증자 전시실"
-                                        value="기증자들의 깊은 뜻을 마음에 새김으로써 기부와 나눔의 가치를 공유하는 공간이다."
-                                        color="border-l-indigo-500 text-indigo-400"
+                                        title="Floor F1"
+                                        value={
+                                            "A : 출입문\nB : 학교사 전시실\nC : 1수장고(보이는 수장고)\nD : 2수장고(보이는 수장고)\nE : 3수장고\n* 여성화정실, 여성장애인화장실"
+                                        }
+                                        color="border-l-blue-500 text-blue-400"
                                     />
                                     <SequenceStep
-                                        title="3층 - 상설 전시실"
-                                        value="토기, 도자기, 동경 등 우리 대학 박물관이 소장하고 있는 유물을 전시한 공간이다."
-                                        color="border-l-emerald-500 text-emerald-400"
+                                        title="Floor F2"
+                                        value={
+                                            "A : 기증자 전시실\nB : 김조자 기획전시실\nC : 체엄 실습실\nD : 명예의전당\nE : 강의실\n* 남성화장실, 남성장애인화장실"
+                                        }
+                                        color="border-l-blue-500 text-blue-400"
+                                    />
+                                    <SequenceStep
+                                        title="Floor F3"
+                                        value={"A : 상설 전시실"}
+                                        color="border-l-blue-500 text-blue-400"
                                     />
                                 </div>
                             </div>
@@ -383,7 +393,10 @@ function SequenceStep({ title, value, color }) {
                 className={`w-full bg-[#1e2430] p-3 rounded-lg text-center border-l-4 shadow-sm border border-slate-800 hover:bg-[#252c3b] transition-colors ${color}`}
             >
                 <p className="text-slate-200 text-xs font-bold mb-0.5">{title}</p>
-                <p className="text-[11px] opacity-80 font-mono leading-relaxed">{value}</p>
+                {/* whiteSpace: "pre-wrap"을 추가하여 \n 줄바꿈이 적용되게 함 */}
+                <p className="text-[11px] opacity-80 font-mono leading-relaxed" style={{ whiteSpace: "pre-wrap" }}>
+                    {value}
+                </p>
             </div>
         </div>
     );

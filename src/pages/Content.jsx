@@ -12,7 +12,7 @@ function Content() {
         contents: "",
         ar_marker_id: "",
         pos_x: "",
-        pos_y: "",
+        pos_z: "",
         floor_info: "Museum 1F",
     });
 
@@ -47,7 +47,7 @@ function Content() {
             contents: item.contents || "",
             ar_marker_id: item.ar_marker_id || "",
             pos_x: item.pos_x || "",
-            pos_y: item.pos_y || "",
+            pos_z: item.pos_z || "",
             floor_info: item.floor_info || "Museum 1F",
         });
 
@@ -87,7 +87,7 @@ function Content() {
             contents: "",
             ar_marker_id: "",
             pos_x: "",
-            pos_y: "",
+            pos_z: "",
             floor_info: "Museum 1F",
         });
         setPreviewImage("/images/nophoto.png");
@@ -334,14 +334,14 @@ function Content() {
                                     />
                                 </div>
                                 <div>
-                                    <label className="block text-sm font-medium text-slate-400 mb-1">Y</label>
+                                    <label className="block text-sm font-medium text-slate-400 mb-1">Z</label>
                                     <input
-                                        name="pos_y"
-                                        value={formData.pos_y}
+                                        name="pos_z"
+                                        value={formData.pos_z}
                                         onChange={handleChange}
                                         className="w-full bg-[#151a25] border border-slate-700 rounded-lg px-3 py-2 text-sm text-white"
                                         type="text"
-                                        placeholder="Y축"
+                                        placeholder="Z축"
                                     />
                                 </div>
                                 <div>
